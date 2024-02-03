@@ -75,7 +75,7 @@ const deleteOneProduct = async (req, res) => {
     }
 
     const deletedProduct = await productModel.findOneAndDelete({
-      name: productName,
+      name: { $regex: new RegExp(searchTerm, "i") },
     });
 
     if (!deletedProduct) {
