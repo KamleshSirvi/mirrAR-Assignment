@@ -8,6 +8,7 @@ import ProductDetail from "./pages/ProductDetail";
 import UpdateProduct from "./pages/UpdateProduct";
 import UpdateForm from "./pages/UpdateForm";
 import Error from "./pages/Error";
+import SearchProduct from "./pages/SearchProduct";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route element={<CreateProduct />} path="/newProduct" />
           <Route element={<DeleteProduct />} path="/deleteProduct" />
           <Route element={<UpdateForm />} path="/updateproduct/:_id" />
+          <Route element={<SearchProduct />} path="/searchProduct" />
           <Route element={<Error />} path="*" />
         </Routes>
       </BrowserRouter>

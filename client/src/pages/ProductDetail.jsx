@@ -55,13 +55,6 @@ const ProductDetail = () => {
                 </ul>
               </div>
             )}
-
-            {/* <button
-              className="mt-6 bg-gray-700 text-white py-2 px-4 rounded hover:bg-gray-800 focus:outline-none"
-              onClick={() => alert("Add your custom action here")}
-            >
-              Add to Cart
-            </button> */}
           </div>
         ) : (
           <p>Loading product details...</p>

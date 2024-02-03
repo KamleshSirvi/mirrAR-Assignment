@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import TruncateParagraph from "../components/TruncateParagraph";
 
 const Home = () => {
-  // const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [products, setProducts] = useState([]);
@@ -50,7 +49,6 @@ const Home = () => {
               >
                 <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
                 <p className="text-gray-700 mb-2">
-                  {/* {product.description} */}
                   <TruncateParagraph
                     text={product.description}
                     maxLength={500}
