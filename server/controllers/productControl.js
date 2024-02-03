@@ -154,6 +154,36 @@ const updateData = async (req, res) => {
   }
 };
 
+const searchProduct = async (req, res) => {
+  const searchTerm = req.query.term;
+
+  try {
+    if (!searchTerm) {
+      return res
+        .status(400)
+        .json({ error: "Name parameter is required for search." });
+    }
+    const searchResults = await productModel.find({
+      $or: [
+        { name: { $regex: new RegExp(searchTerm, "i") } },
+        { description: { $regex: new RegExp(searchTerm, "i") } },
+        { "variants.name": { $regex: new RegExp(searchTerm, "i") } },
+      ],
+    });
+
+    if (searchResults.length === 0) {
+      return res
+        .status(404)
+        .json({ message: "No products found matching the provided name." });
+    }
+
+    res.status(200).json(searchResults);
+  } catch (error) {
+    console.error("Error searching products:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+};
+
 module.exports = {
   addProduct,
   getProducts,
@@ -161,4 +191,5 @@ module.exports = {
   deleteOneProduct,
   getData,
   updateData,
+  searchProduct,
 };
