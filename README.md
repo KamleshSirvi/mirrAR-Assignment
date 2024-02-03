@@ -16,7 +16,7 @@ Before running the application, make sure you have the following installed:
 1. Clone the repository:
 
     ```bash
-    git clone [https://github.com/your-username/e-commerce-app.git](https://github.com/KamleshSirvi/mirrAR-Assignment.git)
+    git clone https://github.com/KamleshSirvi/mirrAR-Assignment.git
     ```
 
 2. Navigate to the project folder:
